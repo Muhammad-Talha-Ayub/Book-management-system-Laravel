@@ -1,0 +1,70 @@
+
+
+LEARN LARAVEL STEP BY STEP.
+===========================
+CLASS ONE - INSTALLATION OF LARAVEL AND CREATING VIRUAL HOST.
+
+STEP-1 INSTALLATION OF LARAVEL.
+	* composer create-project --prefer-dist laravel/laravel inspirebooks 7.* -vvv
+STEP-2 CREATING VIRTUAL HOST.
+	go to C:/windows/system32/drivers/etc "HOST"
+	127.0.0.1 	inspirebooks.test
+	
+	go to xampp/apache/conf/extra/ "httpd-vhosts.conf"
+	<VirtualHost 127.0.0.1:80>
+	    DocumentRoot "D:/xampp/htdocs/inspirebooks/public"
+	    ServerName inspirebooks.test
+	</VirtualHost>
+----------------------------------------------------------------------------------
+CLASS TWO - CREATING AND RUNNING MIGRATION.
+	
+	DATABASE: MIGRATION - create a new migration
+		* php artisan make:migration create_author_table --create=author
+	RUNING MIGRATION: 
+		* php artisan migrate
+
+	ROLLBACK MIGRATION: - delete your tables.
+		* php artisan migrate:rollback
+----------------------------------------------------------------------------------
+CLASS THREE - CREATING AND RUNNING SEEDERS.
+	
+	STEP-1 CREATE SOME MODELS. 
+		* php artisan make:model Author
+	STEP-2 CREATE SOME FACTORIES.
+		* php artisan make:factory AuthorFactory 
+	STEP-3 CREATE SEEDER FILES.
+		* php artisan make:seeder AuthorTableSeeder
+	
+	STEP-4 CALL YOU SEEDER INTO DATABASESEEDER FILE.
+	STEP-5 REFRESH YOUR COMPOSER.
+		* composer dump-autolaod
+	STEP-6 RUN YOUR SEEDERS.
+		* php artisan db:seed
+	STEP-7 ROLLBACK - MIGRATE PLUS SEEDING.
+		* php artisan migrate:refresh --seed
+
+----------------------------------------------------------------------------------
+CLASS FOUR - INTEGRATION OF ADMIN PANEL (CMS) PANEL.
+	1) go to resource->view and create admin folder.
+	2) create some section folder into admin folder.
+	3) defines your routes.
+	4) create some section controllers.
+		* php artisan make:controller Admin/AuthorController
+		
+	----------------------------------------------------------------------------------
+CLASS FIVE - READ RECORD, PAGINATION, SHOWING PER PAGE AND SEARCH RECORD.
+----------------------------------------------------------------------------------
+CLASS SIX - DESTROY RECORD AND / STATUS UPDATE.
+----------------------------------------------------------------------------------
+CLASS SEVEN - INSERTING DATA WITH FORM VALIDATION.
+----------------------------------------------------------------------------------
+CLASS EIGHT - EDIT AND UPDATE RECORD.
+----------------------------------------------------------------------------------
+CLASS NINE - FILE UPLOADING CLASS [ ADD -FILE, VIEW FILE, EDIT FILE, DESTROY FILE].
+----------------------------------------------------------------------------------
+CLASS TEN - SOME SMALLER CHANGES - WORKING WITH SIDEBAR.
+----------------------------------------------------------------------------------
+
+
+
+
